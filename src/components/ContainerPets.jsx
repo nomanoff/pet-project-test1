@@ -1,37 +1,44 @@
-import React from "react";
-import Pets from "./Pets";
+import PetItem from "./PetItem";
 
 const ContainerPets = () => {
-    const pets = [
-        {
-            name: "Jobi",
-            breed: "Tabby",
-            url: "https://pets-images.dev-apis.com/pets/cat5.jpg",
-        },
-        {
-            name: "Kesley",
-            breed: "Tabby",
-            url: "https://pets-images.dev-apis.com/pets/cat7.jpg",
-        },
-        {
-            name: "Jonell",
-            breed: "Tabby",
-            url: "https://pets-images.dev-apis.com/pets/cat6.jpg",
-        },
-        {
-            name: "Ponell",
-            breed: "Tabby",
-            url: "https://pets-images.dev-apis.com/pets/cat4.jpg",
-        }
-    ];
+  const pets = [
+    {
+      name: "Jobi",
+      breed: "Tabby",
+      url: "https://pets-images.dev-apis.com/pets/cat5.jpg",
+    },
+    {
+      name: "Kesley",
+      breed: "Tabby",
+      url: "https://pets-images.dev-apis.com/pets/cat7.jpg",
+    },
+    {
+      name: "Jonell",
+      breed: "Tabby",
+      url: "https://pets-images.dev-apis.com/pets/cat6.jpg",
+    },
+    {
+      name: "Ponell",
+      breed: "Tabby",
+      url: "https://pets-images.dev-apis.com/pets/cat4.jpg",
+    },
+  ];
 
-    return (
-        <div className="containerReturn">
-            {pets.map((pet, index) => (
-                <Pets key={index} url={pet.url} name={pet.name} breed={pet.breed} />
-            ))}
-        </div>
-    );
-}
+  const handlePetItemClick = (pet) => {
+    console.log("Pet item: ", pet);
+  };
+
+  return (
+    <div className="containerReturn">
+      {pets.map((pet, index) => (
+        <PetItem
+          key={index}
+          pet={pet}
+          handlePetItemClick={handlePetItemClick}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default ContainerPets;

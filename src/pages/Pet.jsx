@@ -1,12 +1,12 @@
 import { NavLink } from "react-router";
 
 const Pet = () => {
+  // pet
+
   return (
     <div className="details-container">
       <h1>Pet page</h1>
-      <NavLink to="/" end>
-        <button className="back-button">Back</button>
-      </NavLink>
+      <p>{pet.name}</p>
     </div>
   );
 };
