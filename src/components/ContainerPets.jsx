@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router";
 import PetItem from "./PetItem";
 
 const ContainerPets = () => {
+  const navigate = useNavigate();
   const pets = [
     {
       name: "Jobi",
@@ -26,6 +28,7 @@ const ContainerPets = () => {
 
   const handlePetItemClick = (pet) => {
     console.log("Pet item: ", pet);
+    navigate(`/pet/${pet.name}`);
   };
 
   return (
